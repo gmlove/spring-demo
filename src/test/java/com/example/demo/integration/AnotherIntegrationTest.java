@@ -2,8 +2,8 @@ package com.example.demo.integration;
 
 import static org.mockito.Mockito.when;
 
-import com.example.demo.User;
-import com.example.demo.UserRepository;
+import com.example.demo.db.User;
+import com.example.demo.db.UserRepository;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;

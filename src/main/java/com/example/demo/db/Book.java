@@ -1,32 +1,33 @@
-package com.example.demo;
+package com.example.demo.db;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.time.LocalDateTime;
-import java.util.Set;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToOne;
 
 @Entity
-@NoArgsConstructor
-@AllArgsConstructor
+@Getter
+@Setter
 @Builder
-@Getter @Setter
-public class User {
-  @Id @GeneratedValue(strategy= GenerationType.IDENTITY)
+@AllArgsConstructor
+@NoArgsConstructor
+public class Book {
+  @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Integer id;
   private String name;
-  @OneToMany(fetch = FetchType.EAGER)
-  @JoinColumn(name = "owner_id")
-  private Set<Book> books;
-  private LocalDateTime updatedAt;
+
+  @ManyToOne(optional = false, fetch = FetchType.EAGER)
+  @JoinColumn(name="owner_id", nullable=false, updatable=false)
+  @JsonIgnore
+  private User owner;
 }

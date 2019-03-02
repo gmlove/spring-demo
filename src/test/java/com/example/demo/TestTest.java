@@ -1,5 +1,7 @@
 package com.example.demo;
 
+import com.example.demo.db.Book;
+import com.example.demo.db.User;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.AllArgsConstructor;

@@ -1,6 +1,10 @@
 package com.example.demo;
 
 import com.example.demo.UserController.Dtos.CreatedUserDto;
+import com.example.demo.db.Book;
+import com.example.demo.db.BookRepository;
+import com.example.demo.db.User;
+import com.example.demo.db.UserRepository;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.beans.BeanUtils;
