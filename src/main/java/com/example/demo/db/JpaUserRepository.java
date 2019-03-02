@@ -11,7 +11,7 @@ public interface JpaUserRepository extends UserRepository, JpaRepository<User, I
   @Query(value = "SELECT * FROM user WHERE name = ?1", nativeQuery = true)
   List<User> findByName(String name);
 
-  @Query(value = "UPDATE user set updated_at=UTC_TIMESTAMP where id=:userId", nativeQuery = true)
+  @Query(value = "UPDATE user set updated_at=UTC_TIMESTAMP where id=?1", nativeQuery = true)
   @Modifying
   void updateTime(int userId);
 
