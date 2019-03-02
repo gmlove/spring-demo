@@ -16,7 +16,7 @@ import java.util.Optional;
 
 @RunWith(SpringRunner.class)
 @DataJpaTest
-public class AnotherIntegrationTest {
+public class DataJpaIntegrationTest {
 
   @MockBean
   UserRepository repository;
